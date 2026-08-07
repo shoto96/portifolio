@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<script>
+  (function() {
+    var saved = localStorage.getItem('portfolio-theme');
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-bs-theme', saved || (prefersDark ? 'dark' : 'light'));
+  })();
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean Vieira | Analista de Sistemas & Desenvolvedor Back-End — Portfólio</title>
+    <meta name="description" content="Portfólio de Jean Vieira, Analista de Sistemas e Desenvolvedor Back-End especializado em Java, Spring Boot, APIs REST e arquitetura de micros serviços. Confira projetos, skills e experiência.">
+    <meta name="keywords" content="Jean Vieira, analista de sistemas, desenvolvedor back-end, Java, Spring Boot, APIs REST, micros serviços, arquitetura de software, banco de dados, portfólio developer, Salvador, Bahia, Brasil">
+    <meta name="author" content="Jean Vieira">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="theme-color" content="#020617">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://jeanvieira.dev/">
+
+    <!-- SEO & Indexing -->
+    <meta name="language" content="pt-BR">
+    <meta http-equiv="content-language" content="pt-BR">
+    <meta name="subject" content="Portfólio de Analista de Sistemas & Desenvolvedor Back-End">
+    <meta name="copyright" content="Jean Vieira">
+    <meta name="owner" content="Jean Vieira">
+    <meta name="designer" content="Jean Vieira">
+    <meta name="reply-to" content="jean72729@gmail.com">
+    <meta name="url" content="https://jeanvieira.dev/">
+    <meta name="identifier-URL" content="https://jeanvieira.dev/">
+    <meta name="category" content="Tecnologia, Desenvolvimento de Software, Programação, TI">
+    <meta name="coverage" content="Worldwide">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+    <meta name="revisit-after" content="7 days">
+    <meta name="target" content="all">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="pt-BR" href="https://jeanvieira.dev/">
+    <link rel="alternate" hreflang="x-default" href="https://jeanvieira.dev/">
+
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+    <!-- Search Engine Verification (preencher com seus códigos) -->
+    <!-- <meta name="google-site-verification" content="SEU_CODIGO_AQUI"> -->
+    <!-- <meta name="msvalidate.01" content="SEU_CODIGO_AQUI"> -->
+
+    <!-- PWA / Mobile App -->
+    <meta name="application-name" content="Jean Vieira">
+    <meta name="apple-mobile-web-app-title" content="Jean Vieira">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-TileColor" content="#020617">
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="script.js" as="script">
+
+    <!-- Prefetch Next Pages (se houver) -->
+    <!-- <link rel="prefetch" href="/blog.html"> -->
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jeanvieira.dev/">
+    <meta property="og:title" content="Jean Vieira | Analista de Sistemas & Desenvolvedor Back-End">
+    <meta property="og:description" content="Portfólio de Jean Vieira, Analista de Sistemas &amp; Mobile especializado em React, React Native, Node.js, TypeScript e soluções escaláveis.">
+    <meta property="og:image" content="https://jeanvieira.dev/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Jean Vieira - Analista de Sistemas e Desenvolvedor Back-End especializado em Java, Spring Boot e APIs REST">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:updated_time" content="2026-08-04T00:00:00-03:00">
+    <meta property="og:site_name" content="Jean Vieira — Portfólio">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://jeanvieira.dev/">
+    <meta name="twitter:title" content="Jean Vieira | Analista de Sistemas & Desenvolvedor Back-End">
+    <meta name="twitter:description" content="Portfólio de Jean Vieira, Analista de Sistemas &amp; Mobile especializado em React, React Native, Node.js, TypeScript e soluções escaláveis.">
+    <meta name="twitter:image" content="https://jeanvieira.dev/assets/og-image.jpg">
+    <meta name="twitter:image:alt" content="Jean Vieira - Analista de Sistemas e Desenvolvedor Back-End especializado em Java, Spring Boot e APIs REST">
+    <meta name="twitter:site" content="@shoto96">
+    <meta name="twitter:creator" content="@shoto96">
+
+    <!-- Preconnect & DNS Prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://api.github.com">
+    <link rel="dns-prefetch" href="https://gitlab.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://jeanvieira.dev/#website",
+                "name": "Jean Vieira — Portfólio",
+                "url": "https://jeanvieira.dev/",
+                "description": "Portfólio de Jean Vieira, Analista de Sistemas e Desenvolvedor Back-End especializado em Java, Spring Boot, APIs REST e arquitetura de micros serviços.",
+                "publisher": {
+                    "@id": "https://jeanvieira.dev/#person"
+                },
+                "inLanguage": "pt-BR",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://jeanvieira.dev/?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://jeanvieira.dev/#webpage",
+                "url": "https://jeanvieira.dev/",
+                "name": "Jean Vieira | Analista de Sistemas & Desenvolvedor Back-End — Portfólio",
+                "description": "Portfólio de Jean Vieira, Analista de Sistemas e Desenvolvedor Back-End especializado em Java, Spring Boot, APIs REST e arquitetura de micros serviços.",
+                "isPartOf": {
+                    "@id": "https://jeanvieira.dev/#website"
+                },
+                "about": {
+                    "@id": "https://jeanvieira.dev/#person"
+                },
+                "breadcrumb": {
+                    "@id": "https://jeanvieira.dev/#breadcrumb"
+                },
+                "inLanguage": "pt-BR",
+                "datePublished": "2024-01-01T00:00:00-03:00",
+                "dateModified": "2026-08-04T00:00:00-03:00"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://jeanvieira.dev/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Início",
+                        "item": "https://jeanvieira.dev/"
+                    }
+                ]
+            },
+            {
+                "@type": "Person",
+                "@id": "https://jeanvieira.dev/#person",
+                "name": "Jean Vieira",
+                "alternateName": "Jean Vieira dos Santos",
+                "jobTitle": ["Analista de Sistemas", "Desenvolvedor Back-End", "Engenheiro de Software"],
+                "description": "Analista de Sistemas e Desenvolvedor Back-End especializado em Java, Spring Boot, APIs REST e arquitetura de micros serviços. Apaixonado por criar experiências digitais de alto impacto.",
+                "url": "https://jeanvieira.dev/",
+                "image": "https://jeanvieira.dev/assets/og-image.jpg",
+                "sameAs": [
+                    "https://github.com/shoto96",
+                    "https://gitlab.com/jeanvieiradossantos2096",
+                    "https://www.linkedin.com/in/gean-dev-a822472ab"
+                ],
+                "email": "mailto:jean72729@gmail.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Salvador",
+                    "addressRegion": "Bahia",
+                    "addressCountry": "BR"
+                },
+                "knowsAbout": [
+                    "React", "React Native", "Node.js", "TypeScript", "JavaScript",
+                    "Next.js", "Express.js", "MongoDB", "PostgreSQL", "Docker",
+                    "Git", "Linux", "Mobile Development", "Back-End Development",
+                    "API REST", "GraphQL", "CI/CD", "AWS", "Google Cloud"
+                ],
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "Freelancer / Autônomo"
+                },
+                "nationality": "BR",
+                "gender": "Male"
+            },
+            {
+                "@type": "ProfessionalService",
+                "@id": "https://jeanvieira.dev/#service",
+                "name": "Jean Vieira — Desenvolvimento de Software",
+                "description": "Serviços de desenvolvimento back-end, APIs REST e arquitetura de micros serviços, consultoria em tecnologia e arquitetura de software.",
+                "provider": {
+                    "@id": "https://jeanvieira.dev/#person"
+                },
+                "areaServed": {
+                    "@type": "Place",
+                    "name": "Brasil",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "BR"
+                    }
+                },
+                "serviceType": [
+                    "Desenvolvimento Web",
+                    "Desenvolvimento Mobile",
+                    "Consultoria em Tecnologia",
+                    "Arquitetura de Software"
+                ],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Serviços de Desenvolvimento",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Desenvolvimento Back-End",
+                                "description": "Aplicações back-end robustas com Java, Spring Boot, APIs REST e bancos de dados relacionais e NoSQL."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Desenvolvimento Mobile",
+                                "description": "Integração de APIs RESTful, arquitetura de micros serviços e modelagem de banco de dados."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Consultoria em Tecnologia",
+                                "description": "Consultoria especializada em arquitetura de software, performance e escalabilidade."
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="position-relative">
+
+    <!-- Custom Cursor -->
+    <div id="cursor" class="cursor"></div>
+    <div id="cursor-dot" class="cursor-dot"></div>
+
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="code-loader">
+                <span class="code-line">&lt;JeanVieira /&gt;</span>
+                <span class="code-cursor">_</span>
+            </div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar Scroll -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#" data-text="&lt;JeanVieira /&gt;">&lt;JeanVieira /&gt;</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#sobre" data-nav="sobre"><i class="bi bi-person"></i> Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos" data-nav="servicos"><i class="bi bi-briefcase"></i> Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#habilidades" data-nav="habilidades"><i class="bi bi-stars"></i> Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos" data-nav="projetos"><i class="bi bi-folder"></i> Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experiencia" data-nav="experiencia"><i class="bi bi-award"></i> Experiência</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato" data-nav="contato"><i class="bi bi-chat-left-text"></i> Contato</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <div class="live-clock-widget" title="Hora e data local">
+                            <span id="liveClock" class="live-clock">--:--:--</span>
+                            <span id="liveDate" class="live-date">--/--/----</span>
+                        </div>
+                    </li>
+                                    <li class="nav-item">
+                        <button id="themeToggle" class="nav-link theme-toggle" title="Alternar tema">
+                            <i class="bi bi-sun-fill" id="themeIcon"></i>
+                        </button>
+                    </li>
+</ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section" id="hero">
+        <canvas id="heroCanvas" class="hero-canvas"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="container text-center">
+                <div class="hero-badge reveal-up">
+                    <span class="badge-pulse"></span>
+                    <i class="bi bi-geo-alt-fill"></i> Salvador – BA
+                </div>
+                <h1 class="hero-title reveal-up">
+                    <span class="hero-prefix">Olá, sou</span>
+                    <span class="hero-name" id="typewriter"></span>
+                    <span class="typewriter-cursor">|</span>
+                </h1>
+                <h2 class="hero-subtitle reveal-up">
+                    <span class="code-comment">// </span>
+                    <span class="typing-role" id="typingRole"></span>
+                    <span class="role-cursor">_</span>
+                </h2>
+                <p class="hero-desc reveal-up">
+                    Desenvolvedor em formação com foco em soluções eficientes, APIs REST e aperfeiçoamento contínuo. Busco minha primeira oportunidade como Analista de Sistemas Júnior.
+                </p>
+                <div class="hero-buttons reveal-up">
+                    <a href="#contato" class="btn btn-primary btn-glow">
+                        <span class="btn-content">
+                            <i class="bi bi-chat-dots"></i>
+                            <span>Fale Comigo</span>
+                        </span>
+                    </a>
+                    <a href="https://github.com/shoto96" target="_blank" class="btn btn-outline">
+                        <span class="btn-content">
+                            <i class="bi bi-github"></i>
+                            <span>GitHub</span>
+                        </span>
+                    </a>
+                    <a href="cv.pdf" download="Jean_Vieira_CV.pdf" id="btnDownloadCv" class="btn btn-outline btn-cv-static" aria-label="Baixar currículo em PDF">
+                        <span class="btn-content">
+                            <i class="bi bi-file-earmark-arrow-down"></i>
+                            <span>Download CV</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hero-stats reveal-up" id="heroStats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="heroStatProjects" data-target="10">0</span>
+                        <span class="stat-label">Projetos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="heroStatLangs" data-target="5">0</span>
+                        <span class="stat-label">Linguagens</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="heroStatYears" data-target="5">0</span>
+                        <span class="stat-label">Anos Estudo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-tech-stack reveal-up">
+            <p class="tech-stack-label"><i class="bi bi-cpu"></i> Tech Stack</p>
+            <div class="tech-stack-marquee">
+                <div class="tech-stack-track">
+                    <span class="tech-item"><i class="bi bi-filetype-html"></i> HTML5</span>
+                    <span class="tech-item"><i class="bi bi-filetype-css"></i> CSS3</span>
+                    <span class="tech-item"><i class="bi bi-filetype-js"></i> JavaScript</span>
+                    <span class="tech-item"><i class="bi bi-filetype-tsx"></i> TypeScript</span>
+                    <span class="tech-item"><i class="bi bi-filetype-php"></i> PHP</span>
+                    <span class="tech-item"><i class="bi bi-filetype-py"></i> Python</span>
+                    <span class="tech-item"><i class="bi bi-filetype-java"></i> Java</span>
+                    <span class="tech-item"><i class="bi bi-filetype-cpp"></i> C++</span>
+                    <span class="tech-item"><i class="bi bi-bootstrap"></i> Bootstrap</span>
+                    <span class="tech-item"><i class="bi bi-git"></i> Git</span>
+                    <span class="tech-item"><i class="bi bi-github"></i> GitHub</span>
+                    <span class="tech-item"><i class="bi bi-database"></i> SQL</span>
+                    <span class="tech-item"><i class="bi bi-filetype-html"></i> HTML5</span>
+                    <span class="tech-item"><i class="bi bi-filetype-css"></i> CSS3</span>
+                    <span class="tech-item"><i class="bi bi-filetype-js"></i> JavaScript</span>
+                    <span class="tech-item"><i class="bi bi-filetype-tsx"></i> TypeScript</span>
+                    <span class="tech-item"><i class="bi bi-filetype-php"></i> PHP</span>
+                    <span class="tech-item"><i class="bi bi-filetype-py"></i> Python</span>
+                    <span class="tech-item"><i class="bi bi-filetype-java"></i> Java</span>
+                    <span class="tech-item"><i class="bi bi-filetype-cpp"></i> C++</span>
+                    <span class="tech-item"><i class="bi bi-bootstrap"></i> Bootstrap</span>
+                    <span class="tech-item"><i class="bi bi-git"></i> Git</span>
+                    <span class="tech-item"><i class="bi bi-github"></i> GitHub</span>
+                    <span class="tech-item"><i class="bi bi-database"></i> SQL</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+    <!-- Sobre Mim -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">01. Sobre</span>
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <p class="reveal-up">
+                            Analista de Sistemas e Desenvolvedor Back-End especializado em <strong class="highlight">Java, Spring Boot e APIs REST</strong>, com foco em arquitetura de micros serviços. Possuo formação integrada em <strong class="highlight">Tecnologia da Informação, Redes de Computadores e Desenvolvimento de Software</strong>, o que me permite atuar com uma visão completa e estratégica.
+                        </p>
+                        <p class="reveal-up">
+                            Tenho experiência na construção de soluções robustas, e faz ajustes e otimização
+                        </p>
+
+                        <!-- Badges de Tecnologias -->
+                        <div class="about-badges reveal-up" data-delay="100">
+                            <span class="about-badge python"><i class="bi bi-filetype-py"></i> Python</span>
+                            <span class="about-badge cpp"><i class="bi bi-filetype-cpp"></i> C++</span>
+                            <span class="about-badge java"><i class="bi bi-filetype-java"></i> Java</span>
+                            <span class="about-badge php"><i class="bi bi-filetype-php"></i> PHP</span>
+                            <span class="about-badge spring"><i class="bi bi-leaf"></i> Spring Boot</span>
+                            <span class="about-badge js"><i class="bi bi-filetype-js"></i> JavaScript</span>
+                            <span class="about-badge html"><i class="bi bi-filetype-html"></i> HTML5</span>
+                            <span class="about-badge css"><i class="bi bi-filetype-css"></i> CSS3</span>
+                            <span class="about-badge git"><i class="bi bi-git"></i> Git & GitHub</span>
+                            <span class="about-badge sql"><i class="bi bi-database"></i> SQL</span>
+                            <span class="about-badge api"><i class="bi bi-globe"></i> REST APIs</span>
+                            <span class="about-badge uml"><i class="bi bi-diagram-3"></i> UML</span>
+                            <span class="about-badge photoshop"><i class="bi bi-image"></i> Photoshop</span>
+                        </div>
+
+                        <!-- Estatísticas Animadas -->
+                        <div class="about-stats reveal-up" data-delay="200">
+                            <div class="about-stat-item">
+                                <span class="about-stat-icon">🎓</span>
+                                <span class="about-stat-value" data-count="2">0</span>
+                                <span class="about-stat-label">Formações</span>
+                            </div>
+                            <div class="about-stat-item">
+                                <span class="about-stat-icon">📜</span>
+                                <span class="about-stat-value" data-count="8">0</span>
+                                <span class="about-stat-label">Certificações</span>
+                            </div>
+                            <div class="about-stat-item">
+                                <span class="about-stat-icon">💻</span>
+                                <span class="about-stat-value" data-count="6">0</span>
+                                <span class="about-stat-label">Projetos</span>
+                            </div>
+                            <div class="about-stat-item">
+                                <span class="about-stat-icon">⚡</span>
+                                <span class="about-stat-value" data-count="12">0</span>
+                                <span class="about-stat-label">Tech Stack</span>
+                            </div>
+                        </div>
+
+                        <div class="about-code-block reveal-up" data-delay="300">
+                            <div class="code-header">
+                                <span class="code-dot red"></span>
+                                <span class="code-dot yellow"></span>
+                                <span class="code-dot green"></span>
+                                <span class="code-filename">jean.json</span>
+                            </div>
+                            <pre class="code-body">
+<span class="code-key">"nome"</span>: <span class="code-string">"Jean Vieira"</span>,
+<span class="code-key">"cargo"</span>: <span class="code-string">"Analista de Sistemas | Desenvolvedor Back-End"</span>,
+<span class="code-key">"local"</span>: <span class="code-string">"Salvador, BA"</span>,
+<span class="code-key">"stack"</span>: [<span class="code-string">"Python"</span>, <span class="code-string">"Java"</span>, <span class="code-string">"C++"</span>, <span class="code-string">"Spring Boot"</span>, <span class="code-string">"HTML/CSS/JS"</span>],
+<span class="code-key">"status"</span>: <span class="code-string">"🚀 Disponível para oportunidades"</span>,
+<span class="code-key">"disponivel"</span>: <span class="code-bool">true</span></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="education-card reveal-up">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <i class="bi bi-mortarboard-fill"></i>
+                            </div>
+                            <h4>Formação Acadêmica</h4>
+                            <h5>Tecnólogo em Análise e Desenvolvimento de Sistemas</h5>
+                            <p>Universidade Pitágoras Unopar Anhanguera</p>
+                            <div class="card-meta">
+                                <span class="badge-custom">
+                                    <i class="bi bi-calendar3"></i> 2023 – 2026
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-card reveal-up" data-delay="100" style="margin-top: 1.5rem;">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <i class="bi bi-router-fill"></i>
+                            </div>
+                            <h4>Formação Técnica</h4>
+                            <h5>Técnico em Redes de Computadores</h5>
+                            <p>SENAI CETIND — ProWay</p>
+                            <div class="card-meta">
+                                <span class="badge-custom">
+                                    <i class="bi bi-calendar3"></i> 2017 – 2018
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-card reveal-up" data-delay="200" style="margin-top: 1.5rem;">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <i class="bi bi-trophy-fill"></i>
+                            </div>
+                            <h4>Certificações Destaque</h4>
+                            <h5>Scrum Foundation, Lógica de Programação, Python</h5>
+                            <p>CertiProf, Udemy, Cisco Networking Academy</p>
+                            <div class="card-meta">
+                                <span class="badge-custom">
+                                    <i class="bi bi-award"></i> 8+ Certificações
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tech Marquee na seção Sobre -->
+                    <div class="about-tech-marquee reveal-up" data-delay="300">
+                        <div class="about-tech-track">
+                            <span class="about-tech-item"><i class="bi bi-filetype-py"></i> Python</span>
+                            <span class="about-tech-item"><i class="bi bi-filetype-java"></i> Java</span>
+                            <span class="about-tech-item"><i class="bi bi-filetype-cpp"></i> C++</span>
+                            <span class="about-tech-item"><i class="bi bi-leaf"></i> Spring Boot</span>
+                            <span class="about-tech-item"><i class="bi bi-filetype-js"></i> JavaScript</span>
+                            <span class="about-tech-item"><i class="bi bi-filetype-html"></i> HTML5</span>
+                            <span class="about-tech-item"><i class="bi bi-filetype-css"></i> CSS3</span>
+                            <span class="about-tech-item"><i class="bi bi-git"></i> Git</span>
+                            <span class="about-tech-item"><i class="bi bi-database"></i> SQL</span>
+                            <span class="about-tech-item"><i class="bi bi-diagram-3"></i> UML</span>
+                            <span class="about-tech-item"><i class="bi bi-filetype-py"></i> Python</span>
+                            <span class="about-tech-item"><i class="bi bi-filetype-java"></i> Java</span>
+                            <span class="about-tech-item"><i class="bi bi-filetype-cpp"></i> C++</span>
+                            <span class="about-tech-item"><i class="bi bi-leaf"></i> Spring Boot</span>
+                            <span class="about-tech-item"><i class="bi bi-filetype-js"></i> JavaScript</span>
+                            <span class="about-tech-item"><i class="bi bi-filetype-html"></i> HTML5</span>
+                            <span class="about-tech-item"><i class="bi bi-filetype-css"></i> CSS3</span>
+                            <span class="about-tech-item"><i class="bi bi-git"></i> Git</span>
+                            <span class="about-tech-item"><i class="bi bi-database"></i> SQL</span>
+                            <span class="about-tech-item"><i class="bi bi-diagram-3"></i> UML</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">02. Serviços</span>
+                <h2 class="section-title">O que eu faço</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal-up" data-delay="0">
+                    <div class="service-icon">
+                        <i class="bi bi-laptop"></i>
+                    </div>
+                    <h4>Desenvolvimento Web</h4>
+                    <p>Sites e aplicações web responsivas, modernas e otimizadas com foco em performance e experiência do usuário.</p>
+                    <div class="service-tags">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span>
+                    </div>
+                </div>
+                <div class="service-card reveal-up" data-delay="100">
+                    <div class="service-icon">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                    <h4>Desenvolvimento Mobile</h4>
+                    <p>Aplicativos nativos e multiplataforma para iOS e Android com interfaces intuitivas e código limpo.</p>
+                    <div class="service-tags">
+                        <span>React Native</span><span>Flutter</span><span>iOS</span><span>Android</span>
+                    </div>
+                </div>
+                <div class="service-card reveal-up" data-delay="200">
+                    <div class="service-icon">
+                        <i class="bi bi-hdd-network"></i>
+                    </div>
+                    <h4>APIs & Backend</h4>
+                    <p>Criação de APIs RESTful robustas, integração com bancos de dados e arquitetura escalável.</p>
+                    <div class="service-tags">
+                        <span>Node.js</span><span>Python</span><span>PostgreSQL</span><span>MongoDB</span>
+                    </div>
+                </div>
+                <div class="service-card reveal-up" data-delay="300">
+                    <div class="service-icon">
+                        <i class="bi bi-robot"></i>
+                    </div>
+                    <h4>Automação & Scripts</h4>
+                    <p>Automação de tarefas repetitivas, scripts de processamento de dados e integração entre sistemas.</p>
+                    <div class="service-tags">
+                        <span>Python</span><span>Selenium</span><span>Bash</span><span>CI/CD</span>
+                    </div>
+                </div>
+                <div class="service-card reveal-up" data-delay="400">
+                    <div class="service-icon">
+                        <i class="bi bi-palette"></i>
+                    </div>
+                    <h4>UI/UX Design</h4>
+                    <p>Prototipagem de interfaces, design systems e experiências visuais centradas no usuário.</p>
+                    <div class="service-tags">
+                        <span>Figma</span><span>Adobe XD</span><span>Prototipagem</span><span>Design System</span>
+                    </div>
+                </div>
+                <div class="service-card reveal-up" data-delay="500">
+                    <div class="service-icon">
+                        <i class="bi bi-tools"></i>
+                    </div>
+                    <h4>Consultoria Técnica</h4>
+                    <p>Análise de código, revisão de arquitetura e orientação para melhores práticas de desenvolvimento.</p>
+                    <div class="service-tags">
+                        <span>Code Review</span><span>Refatoração</span><span>Performance</span><span>Segurança</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">03. Habilidades</span>
+                <h2 class="section-title">Habilidades Técnicas</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card reveal-up" data-delay="0">
+                    <div class="skill-icon">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h6>Lógica & Algoritmos</h6>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90"></div>
+                    </div>
+                    <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-card reveal-up" data-delay="50">
+                    <div class="skill-icon">
+                        <i class="bi bi-filetype-html"></i>
+                    </div>
+                    <h6>HTML5 & CSS3</h6>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                    <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-card reveal-up" data-delay="100">
+                    <div class="skill-icon">
+                        <i class="bi bi-filetype-py"></i>
+                    </div>
+                    <h6>Python & C++</h6>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                    <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-card reveal-up" data-delay="150">
+                    <div class="skill-icon">
+                        <i class="bi bi-database"></i>
+                    </div>
+                    <h6>Banco de Dados</h6>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                    </div>
+                    <span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-card reveal-up" data-delay="200">
+                    <div class="skill-icon">
+                        <i class="bi bi-git"></i>
+                    </div>
+                    <h6>Git & GitHub</h6>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                    <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-card reveal-up" data-delay="250">
+                    <div class="skill-icon">
+                        <i class="bi bi-diagram-3"></i>
+                    </div>
+                    <h6>UML & Modelagem</h6>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70"></div>
+                    </div>
+                    <span class="skill-percent">70%</span>
+                </div>
+                <div class="skill-card reveal-up" data-delay="300">
+                    <div class="skill-icon">
+                        <i class="bi bi-gear-wide-connected"></i>
+                    </div>
+                    <h6>APIs RESTful</h6>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                    </div>
+                    <span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-card reveal-up" data-delay="350">
+                    <div class="skill-icon">
+                        <i class="bi bi-pc-display"></i>
+                    </div>
+                    <h6>Redes & Hardware</h6>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70"></div>
+                    </div>
+                    <span class="skill-percent">70%</span>
+                </div>
+            </div>
+            <div class="languages-section reveal-up">
+                <div class="languages-card">
+                    <h4><i class="bi bi-translate"></i> Idiomas</h4>
+                    <div class="languages-grid">
+                        <div class="language-item">
+                            <div class="lang-flag">🇧🇷</div>
+                            <div class="lang-info">
+                                <span class="lang-name">Português</span>
+                                <span class="lang-level">Nativo</span>
+                            </div>
+                            <div class="lang-bar">
+                                <div class="lang-progress" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <div class="lang-flag">🇺🇸</div>
+                            <div class="lang-info">
+                                <span class="lang-name">Inglês</span>
+                                <span class="lang-level">Básico (Técnico)</span>
+                            </div>
+                            <div class="lang-bar">
+                                <div class="lang-progress" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">04. Projetos</span>
+                <h2 class="section-title">Projetos & Estudos</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-intro reveal-up">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="project-intro-card">
+                            <div class="intro-icon"><i class="bi bi-window-sidebar"></i></div>
+                            <h5>Front-End Responsivo</h5>
+                            <p>Aplicações e interfaces web focadas em experiência do usuário e design moderno com HTML, CSS, JavaScript e Bootstrap.</p>
+                            <div class="intro-tags">
+                                <span>HTML</span><span>CSS</span><span>Bootstrap</span>
+                            </div>
+                            <a href="https://github.com/shoto96" target="_blank" class="intro-link">
+                                <i class="bi bi-box-arrow-up-right"></i> Ver no GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="project-intro-card">
+                            <div class="intro-icon"><i class="bi bi-cpu"></i></div>
+                            <h5>Algoritmos & Estruturas</h5>
+                            <p>Repositório dedicado à prática diária de lógica de programação, estruturas de dados e solução de problemas com C++ e Python.</p>
+                            <div class="intro-tags">
+                                <span>C++</span><span>Python</span><span>Lógica</span>
+                            </div>
+                            <a href="https://github.com/shoto96" target="_blank" class="intro-link">
+                                <i class="bi bi-box-arrow-up-right"></i> Ver no GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="project-intro-card">
+                            <div class="intro-icon"><i class="bi bi-server"></i></div>
+                            <h5>APIs REST & Spring Boot</h5>
+                            <p>Estudos voltados para arquitetura de backend, endpoints REST, persistência em Banco de Dados e Spring Framework.</p>
+                            <div class="intro-tags">
+                                <span>Java</span><span>Spring Boot</span><span>SQL</span>
+                            </div>
+                            <a href="https://github.com/shoto96" target="_blank" class="intro-link">
+                                <i class="bi bi-box-arrow-up-right"></i> Ver no GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="gallery-title reveal-up" style="margin-top: 3rem;">
+                <i class="bi bi-star-fill"></i> Projetos em Destaque
+            </h3>
+            <div class="featured-projects reveal-up">
+                <article class="featured-project-card">
+                    <div class="project-image">
+                        <img src="images/nexbot-ai.png" alt="NexBot AI" loading="lazy" decoding="async" style="object-fit: cover; object-position: center;">
+                        <div class="project-overlay">
+                            <a href="https://github.com/shoto96" target="_blank" class="project-btn" title="Ver no GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="#" target="_blank" class="project-btn" title="Ver Deploy">
+                                <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h4>NexBot AI</h4>
+                        <p>Chatbot inteligente com interface moderna e responsiva, desenvolvido para automatizar atendimentos e oferecer respostas contextualizadas em tempo real.</p>
+                        <div class="project-tech">
+                            <span>Python</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-frameworks" style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px;">
+                            <span style="font-size: 0.75rem; padding: 3px 10px; background: rgba(99,102,241,0.15); color: #93c5fd; border-radius: 20px; border: 1px solid rgba(99,102,241,0.3);">Flask</span>
+                            <span style="font-size: 0.75rem; padding: 3px 10px; background: rgba(16,185,129,0.15); color: #6ee7b7; border-radius: 20px; border: 1px solid rgba(16,185,129,0.3);">OpenAI API</span>
+                            <span style="font-size: 0.75rem; padding: 3px 10px; background: rgba(245,158,11,0.15); color: #fcd34d; border-radius: 20px; border: 1px solid rgba(245,158,11,0.3);">Bootstrap</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="featured-project-card">
+                    <div class="project-image">
+                        <img src="images/pokedex_v4.png" alt="Pokédex V4" loading="lazy" decoding="async">
+                        <div class="project-overlay">
+                            <a href="https://github.com/shoto96/pokedex-v4" target="_blank" class="project-btn" title="Ver no GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://shoto96.github.io/pokedex-v4" target="_blank" class="project-btn" title="Ver Deploy">
+                                <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h4>Pokédex V4</h4>
+                        <p>Catálogo completo de Pokémon com filtros por geração, tipo, shiny e modo comparar. Interface moderna e responsiva.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span><span>HTML5</span><span>CSS3</span>
+                        </div>
+                        <div class="project-frameworks" style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px;">
+                            <span style="font-size: 0.75rem; padding: 3px 10px; background: rgba(99,102,241,0.15); color: #93c5fd; border-radius: 20px; border: 1px solid rgba(99,102,241,0.3);">PokéAPI</span>
+                            <span style="font-size: 0.75rem; padding: 3px 10px; background: rgba(16,185,129,0.15); color: #6ee7b7; border-radius: 20px; border: 1px solid rgba(16,185,129,0.3);">Fetch API</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="featured-project-card">
+                    <div class="project-image">
+                        <img src="images/meta_certa_dashboard.png" alt="Meta Certa Dashboard" loading="lazy" decoding="async">
+                        <div class="project-overlay">
+                            <a href="https://github.com/shoto96/meta-certa-dashboard" target="_blank" class="project-btn" title="Ver no GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://shoto96.github.io/meta-certa-dashboard" target="_blank" class="project-btn" title="Ver Deploy">
+                                <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h4>Meta Certa Dashboard</h4>
+                        <p>Painel de produtividade com To Do List, calculadora, gerador de senhas e timer Pomodoro integrados.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span><span>Bootstrap</span><span>HTML5</span>
+                        </div>
+                        <div class="project-frameworks" style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px;">
+                            <span style="font-size: 0.75rem; padding: 3px 10px; background: rgba(99,102,241,0.15); color: #93c5fd; border-radius: 20px; border: 1px solid rgba(99,102,241,0.3);">Bootstrap 5</span>
+                            <span style="font-size: 0.75rem; padding: 3px 10px; background: rgba(16,185,129,0.15); color: #6ee7b7; border-radius: 20px; border: 1px solid rgba(16,185,129,0.3);">LocalStorage</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="featured-project-card">
+                    <div class="project-image">
+                        <img src="images/target_rush.png" alt="Target Rush" loading="lazy" decoding="async">
+                        <div class="project-overlay">
+                            <a href="https://github.com/shoto96/target-rush" target="_blank" class="project-btn" title="Ver no GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://shoto96.github.io/target-rush" target="_blank" class="project-btn" title="Ver Deploy">
+                                <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h4>Target Rush</h4>
+                        <p>Jogo de precisão e reflexo com alvos dinâmicos, sistema de níveis progressivos e recorde local.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span><span>Canvas</span><span>CSS3</span>
+                        </div>
+                        <div class="project-frameworks" style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px;">
+                            <span style="font-size: 0.75rem; padding: 3px 10px; background: rgba(99,102,241,0.15); color: #93c5fd; border-radius: 20px; border: 1px solid rgba(99,102,241,0.3);">HTML5 Canvas</span>
+                            <span style="font-size: 0.75rem; padding: 3px 10px; background: rgba(16,185,129,0.15); color: #6ee7b7; border-radius: 20px; border: 1px solid rgba(16,185,129,0.3);">DOM API</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <h3 class="gallery-title reveal-up" style="margin-top: 3rem;">
+                <i class="bi bi-images"></i> Capturas de Projetos
+            </h3>
+
+            <div class="gallery-controls reveal-up">
+                <button id="btnAddPhoto" class="btn btn-primary btn-glow">
+                    <i class="bi bi-plus-lg"></i> Adicionar Projeto
+                </button>
+                <button id="btnToggleEdit" class="btn btn-outline">
+                    <i class="bi bi-pencil-square"></i> Modo Edição
+                </button>
+            </div>
+            <div class="gallery-filter reveal-up">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="game">Jogos</button>
+                <button class="filter-btn" data-filter="tool">Ferramentas</button>
+                <button class="filter-btn" data-filter="cards">Cards</button>
+                <button class="filter-btn" data-filter="slides">Slides</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            <div class="gallery-grid" id="galleryGrid"></div>
+
+            <h3 class="gallery-title new-title reveal-up">
+                <i class="bi bi-stars"></i> Novos Projetos
+            </h3>
+            <div class="gallery-filter reveal-up" style="margin-bottom: 1.5rem;">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="game">Jogos</button>
+                <button class="filter-btn" data-filter="tool">Ferramentas</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+            </div>
+            <div class="gallery-grid" id="newProjectsGrid">
+                <div class="gallery-item new-item reveal-up" data-category="game" data-index="0">
+                    <div class="gallery-card">
+                        <span class="new-badge">NEW</span>
+                        <img src="images/campo_minado_pro_v2.png" alt="Campo Minado Pro v2" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn zoom" title="Ampliar"><i class="bi bi-zoom-in"></i></button>
+                                <button class="gallery-btn edit" title="Editar"><i class="bi bi-pencil"></i></button>
+                                <button class="gallery-btn remove" title="Remover"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-tag new-tag">Game</span>
+                        <p>Campo Minado Pro v2 — Versão aprimorada com contador de minas, cronômetro e seletor de dificuldade</p>
+                    </div>
+                </div>
+                <div class="gallery-item new-item reveal-up" data-category="game" data-index="1">
+                    <div class="gallery-card">
+                        <span class="new-badge">NEW</span>
+                        <img src="images/target_rush.png" alt="Target Rush" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn zoom" title="Ampliar"><i class="bi bi-zoom-in"></i></button>
+                                <button class="gallery-btn edit" title="Editar"><i class="bi bi-pencil"></i></button>
+                                <button class="gallery-btn remove" title="Remover"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-tag new-tag">Game</span>
+                        <p>Target Rush — Jogo de precisão e reflexo com alvos dinâmicos, sistema de níveis e recorde</p>
+                    </div>
+                </div>
+                <div class="gallery-item new-item reveal-up" data-category="game" data-index="2">
+                    <div class="gallery-card">
+                        <span class="new-badge">NEW</span>
+                        <img src="images/snake_game.png" alt="Snake Game" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn zoom" title="Ampliar"><i class="bi bi-zoom-in"></i></button>
+                                <button class="gallery-btn edit" title="Editar"><i class="bi bi-pencil"></i></button>
+                                <button class="gallery-btn remove" title="Remover"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-tag new-tag">Game</span>
+                        <p>Snake Game — Jogo da cobrinha com pontuação, níveis progressivos e sistema de recorde</p>
+                    </div>
+                </div>
+                <div class="gallery-item new-item reveal-up" data-category="web" data-index="3">
+                    <div class="gallery-card">
+                        <span class="new-badge">NEW</span>
+                        <img src="images/pokedex_v4.png" alt="Pokédex V4" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn zoom" title="Ampliar"><i class="bi bi-zoom-in"></i></button>
+                                <button class="gallery-btn edit" title="Editar"><i class="bi bi-pencil"></i></button>
+                                <button class="gallery-btn remove" title="Remover"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-tag new-tag">Web</span>
+                        <p>Pokédex V4 — Catálogo completo de Pokémon com filtros por geração, tipo, shiny e modo comparar</p>
+                    </div>
+                </div>
+                <div class="gallery-item new-item reveal-up" data-category="web" data-index="4">
+                    <div class="gallery-card">
+                        <span class="new-badge">NEW</span>
+                        <img src="images/meta_certa_dashboard.png" alt="Meta Certa Dashboard" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn zoom" title="Ampliar"><i class="bi bi-zoom-in"></i></button>
+                                <button class="gallery-btn edit" title="Editar"><i class="bi bi-pencil"></i></button>
+                                <button class="gallery-btn remove" title="Remover"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-tag new-tag">Web</span>
+                        <p>Meta Certa Dashboard — Painel de produtividade com To Do List, calculadora, gerador de senhas e Pomodoro</p>
+                    </div>
+                </div>
+                <div class="gallery-item new-item reveal-up" data-category="mobile" data-index="5">
+                    <div class="gallery-card">
+                        <span class="new-badge">NEW</span>
+                        <img src="images/pokedex_mobile.jpeg" alt="Pokédex Mobile" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn zoom" title="Ampliar"><i class="bi bi-zoom-in"></i></button>
+                                <button class="gallery-btn edit" title="Editar"><i class="bi bi-pencil"></i></button>
+                                <button class="gallery-btn remove" title="Remover"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-tag new-tag">Mobile</span>
+                        <p>Pokédex Mobile — App mobile com lista de Pokémon, filtros shiny/mega, quiz e favoritos</p>
+                    </div>
+                </div>
+                <div class="gallery-item new-item reveal-up" data-category="tool" data-index="6">
+                    <div class="gallery-card">
+                        <span class="new-badge">NEW</span>
+                        <img src="images/relogio_digital.png" alt="Relógio Digital" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn zoom" title="Ampliar"><i class="bi bi-zoom-in"></i></button>
+                                <button class="gallery-btn edit" title="Editar"><i class="bi bi-pencil"></i></button>
+                                <button class="gallery-btn remove" title="Remover"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-tag new-tag">Tool</span>
+                        <p>Relógio Digital — Widget minimalista com hora, data, progresso do dia e indicador de período</p>
+                    </div>
+                </div>
+                <div class="gallery-item new-item reveal-up" data-category="web" data-index="7">
+                    <div class="gallery-card">
+                        <span class="new-badge">NEW</span>
+                        <img src="images/landing_page_marketing.png" alt="Landing Page Marketing" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn zoom" title="Ampliar"><i class="bi bi-zoom-in"></i></button>
+                                <button class="gallery-btn edit" title="Editar"><i class="bi bi-pencil"></i></button>
+                                <button class="gallery-btn remove" title="Remover"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-tag new-tag">Web</span>
+                        <p>Landing Page Marketing — Página de destino para agência de conteúdo com CTA e prova social</p>
+                    </div>
+                </div>
+                <div class="gallery-item new-item reveal-up" data-category="game" data-index="8">
+                    <div class="gallery-card">
+                        <span class="new-badge">NEW</span>
+                        <img src="images/tetris_pro.png" alt="Tetris Pro" loading="lazy" decoding="async">
+                        <div class="gallery-overlay">
+                            <div class="gallery-actions">
+                                <button class="gallery-btn zoom" title="Ampliar"><i class="bi bi-zoom-in"></i></button>
+                                <button class="gallery-btn edit" title="Editar"><i class="bi bi-pencil"></i></button>
+                                <button class="gallery-btn remove" title="Remover"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-tag new-tag">Game</span>
+                        <p>Tetris Pro — Jogo clássico de blocos com níveis progressivos, pontuação e controles fluidos</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sonic Showcase Carousel -->
+            <div class="sonic-showcase reveal-up" style="margin-top: 3rem;">
+                <h3 class="gallery-title new-title" style="margin-bottom: 1.5rem;">
+                    <i class="bi bi-controller"></i> Sonic Showcase
+                </h3>
+                <div class="sonic-carousel">
+                    <div class="sonic-carousel-track">
+                        <div class="sonic-slide active">
+                            <img src="images/sonic_1.jpeg" alt="Sonic 1" loading="lazy" decoding="async">
+                        </div>
+                        <div class="sonic-slide">
+                            <img src="images/sonic_2.jpeg" alt="Sonic 2" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <button class="sonic-carousel-btn sonic-prev" aria-label="Anterior">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="sonic-carousel-btn sonic-next" aria-label="Próximo">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                    <div class="sonic-carousel-dots">
+                        <button class="sonic-dot active" data-slide="0" aria-label="Slide 1"></button>
+                        <button class="sonic-dot" data-slide="1" aria-label="Slide 2"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiência -->
+    <section id="experiencia" class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">05. Experiência</span>
+                <h2 class="section-title">Experiência & Certificações</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="timeline-header reveal-up">
+                        <h3><i class="bi bi-award-fill"></i> Cursos e Certificações</h3>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item reveal-up">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h5><img class="timeline-logo-img lawclas" src="images/logos/lawclas.png" alt="LawClas" loading="lazy" decoding="async">Desenvolvimento de APIs REST com Spring Boot</h5>
+                                <span class="timeline-place">LawClas</span>
+                                <span class="timeline-year">2026</span>
+                                <p class="timeline-desc">Criação de APIs RESTful com Spring Boot, integração com bancos de dados e aplicação de boas práticas de arquitetura backend.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item reveal-up">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h5><img class="timeline-logo-img blip" src="images/logos/blip.png" alt="Blip" loading="lazy" decoding="async">Introdução à Lógica de Programação</h5>
+                                <span class="timeline-place">Blip</span>
+                                <span class="timeline-year">2026</span>
+                                <p class="timeline-desc">Fundamentos de lógica computacional, algoritmos, estruturas de controle e resolução de problemas com pensamento estruturado.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item reveal-up">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h5><img class="timeline-logo-img bradesco" src="images/logos/bradesco.png" alt="Bradesco" loading="lazy" decoding="async">GenAI, Dados & Cyber — Bootcamp</h5>
+                                <span class="timeline-place">Bradesco</span>
+                                <span class="timeline-year">2026</span>
+                                <p class="timeline-desc">Imersão em inteligência artificial generativa, análise de dados e fundamentos de cibersegurança para aplicações modernas.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item reveal-up">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h5><img class="timeline-logo-img senai" src="images/logos/senai.png" alt="SENAI" loading="lazy" decoding="async">Técnico em Redes de Computadores</h5>
+                                <span class="timeline-place">SENAI CETIND</span>
+                                <span class="timeline-year">2017 – 2018</span>
+                                <p class="timeline-desc">Configuração, instalação e manutenção de infraestrutura de redes, protocolos de comunicação, cabeamento estruturado e segurança de rede.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item reveal-up">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h5><img class="timeline-logo-img pronatec" src="images/logos/pronatec.png" alt="Pronatec" loading="lazy" decoding="async">Auxiliar de Manutenção Predial</h5>
+                                <span class="timeline-place">Pronatec</span>
+                                <span class="timeline-year">2022</span>
+                                <p class="timeline-desc">Manutenção preventiva e corretiva de instalações prediais, elétricas e hidráulicas em ambientes comerciais e residenciais.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item reveal-up">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h5><img class="timeline-logo-img senai" src="images/logos/senai.png" alt="SENAI" loading="lazy" decoding="async">Auxiliar de Obras de Edificações</h5>
+                                <span class="timeline-place">SENAI Bahia</span>
+                                <span class="timeline-year">—</span>
+                                <p class="timeline-desc">Leitura e interpretação de projetos, acompanhamento de obras civis, controle de materiais e execução de serviços de acabamento.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item reveal-up">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h5><img class="timeline-logo-img prepara" src="images/logos/prepara.png" alt="Prepara" loading="lazy" decoding="async">Montagem e Manutenção de Computadores</h5>
+                                <span class="timeline-place">Prepara Cursos</span>
+                                <span class="timeline-year">—</span>
+                                <p class="timeline-desc">Montagem de hardware, diagnóstico de falhas, configuração de BIOS, instalação de sistemas operacionais e manutenção preventiva.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item reveal-up">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h5><img class="timeline-logo-img megaworks" src="images/logos/megaworks.png" alt="Megaworks" loading="lazy" decoding="async">Informática Avançada</h5>
+                                <span class="timeline-place">Megaworks</span>
+                                <span class="timeline-year">—</span>
+                                <p class="timeline-desc">Domínio de ferramentas de produtividade, design gráfico e desenvolvimento web com Pacote Office, CorelDraw, Photoshop e Dreamweaver.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item reveal-up">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h5><img class="timeline-logo-img mais" src="images/logos/mais.png" alt="Mais" loading="lazy" decoding="async">Processamento de Dados</h5>
+                                <span class="timeline-place">Mais Cursos Interativos</span>
+                                <span class="timeline-year">—</span>
+                                <p class="timeline-desc">Operações com sistemas Windows, edição de documentos, planilhas, apresentações e fundamentos de informática aplicada ao ambiente corporativo.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="timeline-header reveal-up">
+                        <h3><i class="bi bi-briefcase-fill"></i> Experiência Profissional</h3>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item reveal-up">
+                            <div class="timeline-dot work"></div>
+                            <div class="timeline-content">
+                                <h5><img class="timeline-logo-img treba" src="images/logos/treba.png" alt="Treba" loading="lazy" decoding="async">Mesário Voluntário</h5>
+                                <span class="timeline-place">TRE-BA</span>
+                                <span class="timeline-year">2020 – 2025</span>
+                                <p class="timeline-desc">Atendimento ao público, organização e suporte de TI em processos eleitorais.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item reveal-up">
+                            <div class="timeline-dot work"></div>
+                            <div class="timeline-content">
+                                <h5><img class="timeline-logo-img santa" src="images/logos/santa.jpg" alt="Santa" loading="lazy" decoding="async">Auxiliar de Almoxarifado</h5>
+                                <span class="timeline-place">Santa Emília Empreendimentos</span>
+                                <span class="timeline-year">2016 – 2017</span>
+                                <p class="timeline-desc">Organização de materiais, controle de estoque e suporte logístico.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">06. Contato</span>
+                <h2 class="section-title">Entre em Contato</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="row g-5 justify-content-center">
+                <div class="col-md-5">
+                    <div class="contact-links">
+                        <a href="mailto:jean72729@gmail.com" class="contact-link reveal-up">
+                            <div class="contact-link-icon">
+                                <i class="bi bi-envelope-at-fill"></i>
+                            </div>
+                            <div class="contact-link-info">
+                                <h6>E-mail</h6>
+                                <span>jean72729@gmail.com</span>
+                            </div>
+                            <i class="bi bi-arrow-up-right contact-link-arrow"></i>
+                        </a>
+                        <a href="https://wa.me/5571987624134" target="_blank" class="contact-link reveal-up">
+                            <div class="contact-link-icon whatsapp">
+                                <i class="bi bi-whatsapp"></i>
+                            </div>
+                            <div class="contact-link-info">
+                                <h6>WhatsApp</h6>
+                                <span>(71) 98762-4134</span>
+                            </div>
+                            <i class="bi bi-arrow-up-right contact-link-arrow"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gean-dev-a822472ab" target="_blank" class="contact-link reveal-up">
+                            <div class="contact-link-icon linkedin">
+                                <i class="bi bi-linkedin"></i>
+                            </div>
+                            <div class="contact-link-info">
+                                <h6>LinkedIn</h6>
+                                <span>gean-dev-a822472ab</span>
+                            </div>
+                            <i class="bi bi-arrow-up-right contact-link-arrow"></i>
+                        </a>
+                        <a href="https://github.com/shoto96" target="_blank" class="contact-link reveal-up">
+                            <div class="contact-link-icon github">
+                                <i class="bi bi-github"></i>
+                            </div>
+                            <div class="contact-link-info">
+                                <h6>GitHub</h6>
+                                <span>shoto96</span>
+                            </div>
+                            <i class="bi bi-arrow-up-right contact-link-arrow"></i>
+                        </a>
+                    
+                        <a href="https://gitlab.com/jeanvieiradossantos2096" target="_blank" class="contact-link reveal-up">
+                            <div class="contact-link-icon gitlab">
+                                <i class="bi bi-gitlab"></i>
+                            </div>
+                            <div class="contact-link-info">
+                                <h6>GitLab</h6>
+                                <span>jeanvieiradossantos2096</span>
+                            </div>
+                            <i class="bi bi-arrow-up-right contact-link-arrow"></i>
+                        </a>
+</div>
+                </div>
+                <div class="col-md-7">
+                    <form id="contactForm" class="contact-form reveal-up">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" required placeholder="Seu nome">
+                            <span class="form-line"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" required placeholder="seuemail@exemplo.com">
+                            <span class="form-line"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" rows="4" required placeholder="Escreva sua mensagem..."></textarea>
+                            <span class="form-line"></span>
+                        </div>
+                        <button type="submit" id="btnSubmit" class="btn btn-primary btn-glow btn-submit">
+                            <span id="btnText" class="btn-content">
+                                <i class="bi bi-send-fill"></i>
+                                <span>Enviar Mensagem</span>
+                            </span>
+                            <span id="btnSpinner" class="spinner d-none">
+                                <span class="spinner-ring"></span>
+                            </span>
+                        </button>
+                        <div id="alertResponse" class="form-alert d-none" role="alert"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social API Integration -->
+    <section class="section section-alt social-api-section" id="redes">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">// redes_sociais</span>
+                <h2 class="section-title">Conecte-se Comigo</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="social-repos-layout">
+                <!-- Coluna dos Cards Sociais -->
+                <div class="social-grid">
+                    <!-- GitHub Card -->
+                    <div class="social-card reveal-up" data-delay="100" data-platform="github">
+                        <div class="social-card-header">
+                            <div class="social-icon github-bg">
+                                <i class="bi bi-github"></i>
+                            </div>
+                            <div class="social-info">
+                                <h5>GitHub</h5>
+                                <span class="social-handle">@shoto96</span>
+                            </div>
+                        </div>
+                        <div class="social-stats">
+                            <div class="social-stat">
+                                <span class="social-stat-value" data-api="github-repos">--</span>
+                                <span class="social-stat-label">Repositórios</span>
+                            </div>
+                            <div class="social-stat">
+                                <span class="social-stat-value" data-api="github-followers">--</span>
+                                <span class="social-stat-label">Seguidores</span>
+                            </div>
+                            <div class="social-stat">
+                                <span class="social-stat-value" data-api="github-following">--</span>
+                                <span class="social-stat-label">Seguindo</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/shoto96" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visitar perfil no GitHub">
+                            <span>Ver Perfil</span>
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- LinkedIn Card -->
+                    <div class="social-card reveal-up" data-delay="200" data-platform="linkedin">
+                        <div class="social-card-header">
+                            <div class="social-icon linkedin-bg">
+                                <i class="bi bi-linkedin"></i>
+                            </div>
+                            <div class="social-info">
+                                <h5>LinkedIn</h5>
+                                <span class="social-handle">Jean Vieira</span>
+                            </div>
+                        </div>
+                        <div class="social-stats">
+                            <div class="social-stat">
+                                <span class="social-stat-value" data-api="linkedin-connections">500+</span>
+                                <span class="social-stat-label">Conexões</span>
+                            </div>
+                            <div class="social-stat">
+                                <span class="social-stat-value" data-api="linkedin-views">1.2k</span>
+                                <span class="social-stat-label">Visualizações</span>
+                            </div>
+                            <div class="social-stat">
+                                <span class="social-stat-value" data-api="linkedin-posts">15+</span>
+                                <span class="social-stat-label">Publicações</span>
+                            </div>
+                        </div>
+                        <a href="https://www.linkedin.com/in/gean-dev-a822472ab" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visitar perfil no LinkedIn">
+                            <span>Conectar</span>
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Instagram Card -->
+                    <div class="social-card reveal-up" data-delay="250" data-platform="instagram">
+                        <div class="social-card-header">
+                            <div class="social-icon instagram-bg">
+                                <i class="bi bi-instagram"></i>
+                            </div>
+                            <div class="social-info">
+                                <h5>Instagram</h5>
+                                <span class="social-handle">@jeanvieira.dev</span>
+                            </div>
+                        </div>
+                        <div class="social-stats">
+                            <div class="social-stat">
+                                <span class="social-stat-value">120+</span>
+                                <span class="social-stat-label">Publicações</span>
+                            </div>
+                            <div class="social-stat">
+                                <span class="social-stat-value">500+</span>
+                                <span class="social-stat-label">Seguidores</span>
+                            </div>
+                            <div class="social-stat">
+                                <span class="social-stat-value">1.5k</span>
+                                <span class="social-stat-label">Alcance</span>
+                            </div>
+                        </div>
+                        <a href="https://instagram.com/jeanvieira.dev" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visitar perfil no Instagram">
+                            <span>Seguir</span>
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- WhatsApp Card -->
+                    <div class="social-card reveal-up" data-delay="300" data-platform="whatsapp">
+                        <div class="social-card-header">
+                            <div class="social-icon whatsapp-bg">
+                                <i class="bi bi-whatsapp"></i>
+                            </div>
+                            <div class="social-info">
+                                <h5>WhatsApp</h5>
+                                <span class="social-handle">+55 71 98762-4134</span>
+                            </div>
+                        </div>
+                        <div class="social-stats">
+                            <div class="social-stat">
+                                <span class="social-stat-value online">Online</span>
+                                <span class="social-stat-label">Status</span>
+                            </div>
+                            <div class="social-stat">
+                                <span class="social-stat-value">&lt; 1h</span>
+                                <span class="social-stat-label">Resposta</span>
+                            </div>
+                            <div class="social-stat">
+                                <span class="social-stat-value">100%</span>
+                                <span class="social-stat-label">Disponível</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/5571987624134" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Iniciar conversa no WhatsApp">
+                            <span>Iniciar Conversa</span>
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- GitLab Card -->
+                    <div class="social-card reveal-up" data-delay="350" data-platform="gitlab">
+                        <div class="social-card-header">
+                            <div class="social-icon gitlab-bg">
+                                <i class="bi bi-gitlab"></i>
+                            </div>
+                            <div class="social-info">
+                                <h5>GitLab</h5>
+                                <span class="social-handle">@jeanvieiradossantos2096</span>
+                            </div>
+                        </div>
+                        <div class="social-stats">
+                            <div class="social-stat">
+                                <span class="social-stat-value" data-api="gitlab-repos">--</span>
+                                <span class="social-stat-label">Repositórios</span>
+                            </div>
+                            <div class="social-stat">
+                                <span class="social-stat-value" data-api="gitlab-stars">--</span>
+                                <span class="social-stat-label">Estrelas</span>
+                            </div>
+                            <div class="social-stat">
+                                <span class="social-stat-value">100%</span>
+                                <span class="social-stat-label">Ativo</span>
+                            </div>
+                        </div>
+                        <a href="https://gitlab.com/jeanvieiradossantos2096" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visitar perfil no GitLab">
+                            <span>Ver Perfil</span>
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Coluna dos Repositórios -->
+                <div class="repos-column">
+                    <!-- GitHub Repos Preview -->
+                    <div class="github-repos-section reveal-up" data-delay="500">
+                        <div class="github-repos-header">
+                            <h4><i class="bi bi-github"></i> Repositórios em Destaque</h4>
+                            <span class="github-api-status" id="githubApiStatus">
+                                <span class="api-dot"></span> API Ativa
+                            </span>
+                        </div>
+                        <div class="github-repos-grid" id="githubReposGrid">
+                            <div class="github-repo-placeholder">
+                                <div class="repo-skeleton"></div>
+                                <div class="repo-skeleton"></div>
+                                <div class="repo-skeleton"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GitLab Repos Preview -->
+                    <div class="gitlab-repos-section reveal-up" data-delay="550">
+                        <div class="gitlab-repos-header">
+                            <h4><i class="bi bi-gitlab"></i> Repositórios GitLab</h4>
+                            <span class="gitlab-api-status" id="gitlabApiStatus">
+                                <span class="api-dot"></span> API Ativa
+                            </span>
+                        </div>
+                        <div class="gitlab-repos-grid" id="gitlabReposGrid">
+                            <div class="gitlab-repo-placeholder">
+                                <div class="repo-skeleton"></div>
+                                <div class="repo-skeleton"></div>
+                                <div class="repo-skeleton"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">&lt;JeanVieira /&gt;</span>
+                    <p>Construindo o futuro, linha por linha.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#sobre">Sobre</a>
+                    <a href="#habilidades">Habilidades</a>
+                    <a href="#projetos">Projetos</a>
+                    <a href="#experiencia">Experiência</a>
+                    <a href="#contato">Contato</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/shoto96" target="_blank"><i class="bi bi-github"></i></a>
+                    <a href="https://www.linkedin.com/in/gean-dev-a822472ab" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://wa.me/5571987624134" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://gitlab.com/jeanvieiradossantos2096" target="_blank"><i class="bi bi-gitlab"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="footerYear">2026</span> Jean Vieira. Todos os direitos reservados.</p>
+                <p class="footer-credits">Desenvolvido com <i class="bi bi-heart-fill"></i> e muito código</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-overlay"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close"><i class="bi bi-x-lg"></i></button>
+            <button class="lightbox-prev"><i class="bi bi-chevron-left"></i></button>
+            <button class="lightbox-next"><i class="bi bi-chevron-right"></i></button>
+            <img src="" alt="" id="lightboxImg">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <!-- Utility Buttons -->
+    <button id="btnScrollProjects" class="utility-btn scroll-projects-btn" title="Ir para Projetos">
+        <i class="bi bi-images"></i>
+    </button>
+    <button id="btnPrint" class="utility-btn print-btn" title="Imprimir / Salvar PDF">
+        <i class="bi bi-printer"></i>
+    </button>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" title="Voltar ao topo">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal-custom">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close"><i class="bi bi-x-lg"></i></button>
+            <h4 id="modalTitle">Adicionar Projeto</h4>
+            <div class="form-group">
+                <label>Título / Descrição</label>
+                <input type="text" id="modalCaption" placeholder="Descrição do projeto">
+            </div>
+            <div class="form-group">
+                <label>Imagem do Projeto</label>
+                <div class="file-drop-zone" id="imageDropZone">
+                    <input type="file" id="modalImageFile" accept="image/jpeg,image/jpg,image/png,image/webp,image/gif" hidden>
+                    <div class="file-drop-content">
+                        <i class="bi bi-cloud-arrow-up-fill"></i>
+                        <p>Arraste uma imagem ou <span class="file-browse">clique para buscar</span></p>
+                        <small>JPG, PNG, WEBP, GIF — máx. 5MB</small>
+                    </div>
+                    <img id="modalImagePreview" class="file-preview" alt="Preview">
+                    <button type="button" id="btnRemovePreview" class="btn-remove-preview" title="Remover imagem"><i class="bi bi-x-lg"></i></button>
+                </div>
+                <div class="form-or">ou</div>
+                <input type="text" id="modalImageUrl" placeholder="Cole a URL da imagem (https://...)">
+                <div class="cloud-picker">
+                    <button type="button" class="cloud-btn drive" id="btnDrivePicker" title="Escolher do Google Drive">
+                        <i class="bi bi-cloud-fill"></i> Google Drive
+                    </button>
+                    <button type="button" class="cloud-btn onedrive" id="btnOneDrivePicker" title="Escolher do OneDrive">
+                        <i class="bi bi-cloud-haze2"></i> OneDrive
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Categoria</label>
+                <select id="modalCategory">
+                    <option value="web">Web</option>
+                    <option value="game">Jogos</option>
+                    <option value="tool">Ferramentas</option>
+                    <option value="mobile">Mobile</option>
+                    <option value="cards">Cards</option>
+                    <option value="slides">Slides</option>
+                    <option value="design">Design</option>
+                </select>
+            </div>
+            <button id="modalSave" class="btn btn-primary btn-glow">Salvar</button>
+        </div>
+    </div>
+
+    <!-- Edit Info Modal -->
+    <div id="editInfoModal" class="modal-custom">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close"><i class="bi bi-x-lg"></i></button>
+            <h4>Editar Informações</h4>
+            <div class="form-group">
+                <label>Nome</label>
+                <input type="text" id="editName" placeholder="Seu nome">
+            </div>
+            <div class="form-group">
+                <label>Cargo</label>
+                <input type="text" id="editRole" placeholder="Seu cargo">
+            </div>
+            <div class="form-group">
+                <label>Localização</label>
+                <input type="text" id="editLocation" placeholder="Cidade, Estado">
+            </div>
+            <div class="form-group">
+                <label>Bio</label>
+                <textarea id="editBio" rows="3" placeholder="Sua biografia..."></textarea>
+            </div>
+            <div class="form-divider"></div>
+            <div class="form-group">
+                <label>Currículo (PDF)</label>
+                <div class="file-drop-zone small" id="cvDropZone">
+                    <input type="file" id="editCvFile" accept="application/pdf" hidden>
+                    <div class="file-drop-content">
+                        <i class="bi bi-file-earmark-arrow-up-fill"></i>
+                        <p>Arraste seu CV em PDF ou <span class="file-browse">clique para buscar</span></p>
+                        <small id="cvFileName">Nenhum arquivo selecionado</small>
+                    </div>
+                    <button type="button" id="btnRemoveCv" class="btn-remove-preview" title="Remover CV"><i class="bi bi-x-lg"></i></button>
+                </div>
+            </div>
+            <button id="editSave" class="btn btn-primary btn-glow">Salvar Alterações</button>
+            <button id="editReset" class="btn btn-outline" style="margin-top:0.5rem;">Restaurar Padrão</button>
+        </div>
+    </div>
+
+</body>
+</html>
