@@ -1302,8 +1302,115 @@
         if (btnRemovePreview) btnRemovePreview.classList.remove('active');
         if (modalImageFile) modalImageFile.value = '';
         editingItem = null;
+        
+        // Reset PhotoManager
+        if (photoManager) photoManager.reset();
     }
 
+    if (btnAddPhoto) {
+        btnAddPhoto.addEventListener('click', () => {
+            resetProjectModal();
+            initPhotoManager(); // Initialize PhotoManager
+            $('#modalTitle').textContent = 'Adicionar Projeto';
+            openModal(projectModal);
+        });
+    }
+
+    // Toggle edit mode
+    if (btnToggleEdit) {
+        btnToggleEdit.addEventListener('click', () => {
+            editMode = !editMode;
+            btnToggleEdit.innerHTML = editMode
+                ? '<i class="bi bi-check-lg"></i> Concluir Edição'
+                : '<i class="bi bi-pencil-square"></i> Modo Edição';
+            $$('.gallery-item').forEach(item => item.classList.toggle('admin', editMode));
+
+            let editModeHint = $('.edit-mode-hint');
+            if (!editModeHint && galleryGrid) {
+                editModeHint = document.createElement('div');
+                editModeHint.className = 'edit-mode-hint';
+                editModeHint.innerHTML = '<i class="bi bi-arrows-move"></i> Arraste os cards para reordenar. Clique nos botões para editar ou remover.';
+                galleryGrid.parentNode.insertBefore(editModeHint, galleryGrid);
+            }
+            if (editModeHint) editModeHint.classList.toggle('active', editMode);
+
+            showToast(editMode ? 'Modo edição ativado. Use os botões nos cards.' : 'Modo edição desativado.', 'success');
+        });
+    }
+
+    // Modal close handlers
+    $$('.modal-custom .modal-close, .modal-custom .modal-overlay').forEach(el => {
+        el.addEventListener('click', (e) => {
+            if (e.target === el || e.target.closest('.modal-close')) {
+                closeModal(el.closest('.modal-custom'));
+            }
+        });
+    });
+
+    // ESC to close modals
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            $$('.modal-custom.active').forEach(m => closeModal(m));
+        }
+    });
+
+    // Save project with multiple photos
+    const modalSave = $('#modalSave');
+    if (modalSave) {
+        modalSave.addEventListener('click', () => {
+            const caption = $('#modalCaption').value.trim() || 'Novo Projeto';
+            const category = $('#modalCategory').value;
+            const photos = photoManager ? photoManager.getPhotos() : [];
+
+            if (photos.length === 0) {
+                showToast('Adicione pelo menos uma imagem ao projeto', 'warning');
+                return;
+            }
+
+            if (editingItem) {
+                // Edit existing item - use first photo as main image
+                const img = editingItem.querySelector('img');
+                if (img) { 
+                    img.src = photos[0].src; 
+                    img.alt = caption;
+                }
+                editingItem.dataset.category = category;
+                editingItem.dataset.photos = JSON.stringify(photos);
+                const tag = editingItem.querySelector('.gallery-tag');
+                if (tag) tag.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+                const p = editingItem.querySelector('.gallery-caption p');
+                if (p) p.textContent = caption;
+            } else {
+                // Create new item with multiple photos
+                const newItem = { 
+                    src: photos[0].src, 
+                    alt: caption, 
+                    caption, 
+                    category,
+                    photos: photos.map(p => ({ src: p.src, type: p.type, edited: p.edited }))
+                };
+                const div = document.createElement('div');
+                div.innerHTML = createGalleryItemHTML(newItem, Date.now());
+                const el = div.firstElementChild;
+                if (galleryGrid) galleryGrid.appendChild(el);
+                setTimeout(() => { bindGalleryEvents(); initDragAndDrop(); }, 0);
+            }
+            
+            saveGallery();
+            resetProjectModal();
+            closeModal(projectModal);
+            showToast('Projeto salvo com sucesso! ' + photos.length + ' imagem(ns) adicionada(s).', 'success');
+        });
+    }
+
+    // Keyboard shortcuts for modal save
+    document.addEventListener('keydown', (e) => {
+        if (e.ctrlKey && e.key === 'Enter' && projectModal && projectModal.classList.contains('active')) {
+            modalSave?.click();
+        }
+    });
+
+    // Gallery Management Functions
     function loadSavedGallery() {
         const saved = localStorage.getItem('portfolio-gallery');
         if (saved && galleryGrid) {
@@ -1321,14 +1428,15 @@
             const img = item.querySelector('img');
             const caption = item.querySelector('.gallery-caption p')?.textContent || '';
             const category = item.dataset.category || 'web';
-            items.push({ src: img?.src || '', alt: img?.alt || '', caption, category });
+            const photos = item.dataset.photos ? JSON.parse(item.dataset.photos) : [];
+            items.push({ src: img?.src || '', alt: img?.alt || '', caption, category, photos });
         });
         localStorage.setItem('portfolio-gallery', JSON.stringify(items));
     }
 
     function createGalleryItemHTML(item, idx) {
         const tagLabel = item.category.charAt(0).toUpperCase() + item.category.slice(1);
-        return `<div class="gallery-item reveal-up visible" data-category="${item.category}" data-index="${idx}"><div class="gallery-card"><img src="${item.src}" alt="${item.alt}" loading="lazy"><div class="gallery-overlay"><div class="gallery-actions"><button class="gallery-btn zoom" title="Ampliar"><i class="bi bi-zoom-in"></i></button><button class="gallery-btn edit" title="Editar"><i class="bi bi-pencil"></i></button><button class="gallery-btn remove" title="Remover"><i class="bi bi-trash"></i></button></div></div></div><div class="gallery-caption"><span class="gallery-tag">${tagLabel}</span><p>${item.caption}</p></div></div>`;
+        return `<div class="gallery-item reveal-up visible" data-category="${item.category}" data-index="${idx}" ${item.photos ? `data-photos='${JSON.stringify(item.photos)}'` : ''}><div class="gallery-card"><img src="${item.src}" alt="${item.alt}" loading="lazy"><div class="gallery-overlay"><div class="gallery-actions"><button class="gallery-btn zoom" title="Ampliar"><i class="bi bi-zoom-in"></i></button><button class="gallery-btn edit" title="Editar"><i class="bi bi-pencil"></i></button><button class="gallery-btn remove" title="Remover"><i class="bi bi-trash"></i></button></div></div></div><div class="gallery-caption"><span class="gallery-tag">${tagLabel}</span><p>${item.caption}</p></div></div>`;
     }
 
     /* ─────────────── DRAG & DROP REORDER (ENHANCED) ─────────────── */
@@ -1345,7 +1453,6 @@
                 item.classList.add('dragging');
                 e.dataTransfer.effectAllowed = 'move';
                 e.dataTransfer.setData('text/plain', item.dataset.index || '');
-                // Ghost image
                 if (e.dataTransfer.setDragImage) {
                     const rect = item.getBoundingClientRect();
                     e.dataTransfer.setDragImage(item, rect.width / 2, rect.height / 2);
@@ -1417,18 +1524,18 @@
                 const img = editingItem.querySelector('img');
                 const caption = editingItem.querySelector('.gallery-caption p')?.textContent || '';
                 const category = editingItem.dataset.category || 'web';
-                const src = img?.src || '';
+                const photos = editingItem.dataset.photos ? JSON.parse(editingItem.dataset.photos) : [];
+                
                 resetProjectModal();
                 $('#modalCaption').value = caption;
                 $('#modalCategory').value = category;
                 $('#modalTitle').textContent = 'Editar Projeto';
-                if (src.startsWith('data:image')) {
-                    uploadedImageBase64 = src;
-                    if (modalImagePreview) { modalImagePreview.src = src; modalImagePreview.classList.add('active'); }
-                    if (btnRemovePreview) btnRemovePreview.classList.add('active');
-                } else {
-                    $('#modalImageUrl').value = src;
+                
+                // Populate PhotoManager with existing photos
+                if (photoManager && photos.length > 0) {
+                    photos.forEach(photo => photoManager.addPhoto(photo.src, photo.type));
                 }
+                
                 openModal(projectModal);
             });
         });
@@ -1441,88 +1548,6 @@
     function closeModal(modal) {
         if (modal) { modal.classList.remove('active'); document.body.style.overflow = ''; }
     }
-
-    if (btnToggleEdit) {
-        btnToggleEdit.addEventListener('click', () => {
-            editMode = !editMode;
-            btnToggleEdit.innerHTML = editMode
-                ? '<i class="bi bi-check-lg"></i> Concluir Edição'
-                : '<i class="bi bi-pencil-square"></i> Modo Edição';
-            $$('.gallery-item').forEach(item => item.classList.toggle('admin', editMode));
-
-            let editModeHint = $('.edit-mode-hint');
-            if (!editModeHint && galleryGrid) {
-                editModeHint = document.createElement('div');
-                editModeHint.className = 'edit-mode-hint';
-                editModeHint.innerHTML = '<i class="bi bi-arrows-move"></i> Arraste os cards para reordenar. Clique nos botões para editar ou remover.';
-                galleryGrid.parentNode.insertBefore(editModeHint, galleryGrid);
-            }
-            if (editModeHint) editModeHint.classList.toggle('active', editMode);
-
-            showToast(editMode ? 'Modo edição ativado. Use os botões nos cards.' : 'Modo edição desativado.', 'success');
-        });
-    }
-
-    if (btnAddPhoto) {
-        btnAddPhoto.addEventListener('click', () => {
-            resetProjectModal();
-            $('#modalTitle').textContent = 'Adicionar Projeto';
-            openModal(projectModal);
-        });
-    }
-
-    $$('.modal-custom .modal-close, .modal-custom .modal-overlay').forEach(el => {
-        el.addEventListener('click', (e) => {
-            if (e.target === el || e.target.closest('.modal-close')) {
-                closeModal(el.closest('.modal-custom'));
-            }
-        });
-    });
-
-    // ESC to close modals
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            $$('.modal-custom.active').forEach(m => closeModal(m));
-        }
-    });
-
-    const modalSave = $('#modalSave');
-    if (modalSave) {
-        modalSave.addEventListener('click', () => {
-            const urlVal = $('#modalImageUrl').value.trim();
-            const src = uploadedImageBase64 || urlVal || 'https://via.placeholder.com/600x400?text=Projeto';
-            const caption = $('#modalCaption').value.trim() || 'Novo Projeto';
-            const category = $('#modalCategory').value;
-
-            if (editingItem) {
-                const img = editingItem.querySelector('img');
-                if (img) { img.src = src; img.alt = caption; }
-                editingItem.dataset.category = category;
-                const tag = editingItem.querySelector('.gallery-tag');
-                if (tag) tag.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-                const p = editingItem.querySelector('.gallery-caption p');
-                if (p) p.textContent = caption;
-            } else {
-                const newItem = { src, alt: caption, caption, category };
-                const div = document.createElement('div');
-                div.innerHTML = createGalleryItemHTML(newItem, Date.now());
-                const el = div.firstElementChild;
-                if (galleryGrid) galleryGrid.appendChild(el);
-                setTimeout(() => { bindGalleryEvents(); initDragAndDrop(); }, 0);
-            }
-            saveGallery();
-            resetProjectModal();
-            closeModal(projectModal);
-            showToast('Projeto salvo com sucesso!', 'success');
-        });
-    }
-
-    // Keyboard shortcuts for modal save
-    document.addEventListener('keydown', (e) => {
-        if (e.ctrlKey && e.key === 'Enter' && projectModal && projectModal.classList.contains('active')) {
-            modalSave?.click();
-        }
-    });
 
     loadSavedGallery();
     bindGalleryEvents();
